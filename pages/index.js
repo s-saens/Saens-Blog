@@ -10,7 +10,7 @@ export default function Home() {
 
       <main>
         <h1 className="title">
-          안녕? <a href="https://nextjs.org">Next.js!</a>
+          안녕? <a href="/posts/first-post">Next.js!</a>
         </h1>
 
         <p className="description">
