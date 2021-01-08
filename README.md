@@ -1,1 +1,1 @@
-Saens' Dev Blog powered by Next.js
+Saens' Dev Blog with Next.js
