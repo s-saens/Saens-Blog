@@ -8,17 +8,23 @@ body {
   font-size: 18px;
 }
 
+#__next {
+  padding: 0;
+  margin: 0;
+}
+
 * {
   box-sizing: border-box;
 }
 
 a {
-  color: #0070f3;
+  color: #2ba57c;
   text-decoration: none;
+  transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 a:hover {
-   color: #000;
+   color: rgb(43, 148, 247);
    text-decoration: underline;
 }
 
