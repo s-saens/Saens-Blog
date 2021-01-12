@@ -5,5 +5,3 @@ Saens' Dev Blog with Next.js
 **Next.js**
 
 **Tailwind CSS**
-
-MySQL
