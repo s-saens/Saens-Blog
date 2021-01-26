@@ -9,7 +9,7 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html>
+      <Html className="transition-all">
         <Head />
         <body>
           <Main />

@@ -1,33 +1,23 @@
 import Head from "next/head";
-import styles from "./layout.module.css";
-import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
 
-const name = "SAENS";
-export const siteTitle = "Next.js Sample Website";
+const name = "Saens";
+export const siteTitle = "Saens";
 
 export default function Layout({ children, home }) {
+  
   return (
-    <div className={styles.layout}>
-      <div className={styles.navbar}>
-        <Link href="/"><img
-          src="/images/menu.svg"
-          className={styles.navbar_contents}
-          alt={name}
-        /></Link>
+    <div className="[LAYOUT] absolute w-full transition-all">
+
+      <div className= {"[NAVBAR] transition-all z-50 w-full fixed flex justify-center bg-white shadow-lg h-12 md:h-16 lg:h-20"} >
         <Link href="/"><img
           src="/images/saens.svg"
-          className={styles.navbar_logo}
-          alt={name}
-        /></Link>
-        <Link href="/"><img
-          src="/images/search.svg"
-          className={styles.navbar_contents}
+          className="image w-20 md:w-24 lg:w-28 cursor-pointer rounded-lg transition-all transform hover:scale-110"
           alt={name}
         /></Link>
       </div>
 
-      <div className={styles.container}>
+      <div className={"[CONTENT] min-h-full max-w-3xl mx-auto p-4 my-20 md:mt-24 lg:mt-32"}>
         <Head>
           <link rel="icon" href="/favicons.ico" />
           <meta
@@ -45,13 +35,19 @@ export default function Layout({ children, home }) {
         </Head>
         <main>{children}</main>
         {!home && (
-          <div className={styles.backToHome}>
+          <div className="[BACK-TO-HOME-BUTTON]">
             <Link href="/">
               <a>← Back to home</a>
             </Link>
           </div>
         )}
       </div>
+
+      <div className={"[FOOTER] w-full h-48 bg-black text-gray-300 text-center mt-24"}>
+        <img className="mx-auto pt-16 w-32" src="/images/saensw.svg" alt="white logo"></img>
+        <p className="pt-4">aufflugelndesgesanges9199@gmail.com</p>
+      </div>
+
     </div>
   );
 }

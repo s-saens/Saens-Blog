@@ -1,9 +1,9 @@
 import Layout from '../../components/layout'
 import { getAllPostIds, getPostData } from '../../lib/posts'
 import Head from 'next/head'
-import Date from '../../components/date'
 
-import utilStyles from '../../styles/utils.module.css'
+import Date from '../../components/date'
+import numberPad from '../../components/numberpad'
 
 
 export async function getStaticProps({ params }) {
@@ -17,11 +17,6 @@ export async function getStaticProps({ params }) {
 
 export default function Post({ postData }) {
 
-   function numberPad(n, width) {
-      n = n + '';
-      return n.length >= width ? n : new Array(width - n.length + 1).join('0') + n;
-   }
-
    return (
       <Layout>
 
@@ -29,10 +24,8 @@ export default function Post({ postData }) {
             <title>{numberPad(postData.id, 3)}. {postData.title}</title>
          </Head>
 
-         <h1 className={utilStyles.headingX1}>{postData.title}</h1>
-         
-         <br />
-            <Date dateString={postData.date} />
+         <h1 className="text-xl font-bold">{postData.title}</h1>
+            <Date className="bg-black" dateString={postData.date} />
          <br />
             <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
          <br />
